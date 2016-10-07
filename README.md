@@ -22,23 +22,27 @@ fisher masa0x80/complement_ssh_host.fish
 ## Dependencies
 
 - [ruby]
-- [fzf]
+- [fzf], [peco] or [percol]
 
 ## Usage
 
-To insert host name to command line, type ctrl-s ctrl-s (`\cs\cs`).
+### Switch branches
+
+To switch to the selected branch, type ctrl-g ctrl-b (`\cg\cb`).
 
 ## Setup
 
 ### `COMPLEMENT_SSH_HOST_KEYBIND`
 
 `COMPLEMENT_SSH_HOST_KEYBIND` is the key binding to start the input completion for host name.
-It is defaulted to `\cs\cs` (ctrl-s ctrl-s).
+It is defaulted to `\cg\cb` (ctrl-g ctrl-b).
 
 ## Bibliography
 
 [ruby]: https://www.ruby-lang.org/
 [fzf]: https://github.com/junegunn/fzf
+[peco]: https://github.com/peco/peco
+[percol]: https://github.com/mooz/percol
 [fresco]: https://github.com/masa0x80/fresco
 [fisherman]: https://github.com/fisherman/fisherman
 [assh]: https://github.com/moul/advanced-ssh-config
