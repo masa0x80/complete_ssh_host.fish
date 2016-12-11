@@ -1,4 +1,4 @@
-function __complement_ssh_host
+function __complete_ssh_host
   ruby -e "File.read('$HOME/.ssh/config').scan(/Host ([^*?\s]+)\n(?:  .*\n)*  #?\s?HostName:? ([^\n]+)\n/i).each do |config|
     puts '%s # %s' % [config[0].ljust(30, ' '), config[1]]
   end" | sort | angler | read -l selected_line
