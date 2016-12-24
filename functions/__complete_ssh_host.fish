@@ -1,6 +1,8 @@
 function __complete_ssh_host
-  ruby -e "File.read('$HOME/.ssh/config').scan(/Host ([^*?\s]+)\n(?:  .*\n)*  #?\s?HostName:? ([^\n]+)\n/i).each do |config|
-    puts '%s # %s' % [config[0].ljust(30, ' '), config[1]]
+  ruby -e "Dir.glob('$COMPLETE_SSH_HOST_SSH_CONFIG_PATTERN').map do |file|
+    File.read(file).scan(/Host ([^*?\s]+)\n(?:  .*\n)*  #?\s?HostName:? ([^\n]+)\n/i).each do |config|
+      puts '%s # %s' % [config[0].ljust(30, ' '), config[1]]
+    end
   end" | sort | angler | read -l selected_line
 
   set -l host (echo $selected_line | cut -d ' ' -f 1)

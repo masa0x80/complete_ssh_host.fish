@@ -37,6 +37,9 @@ To switch to the selected branch, type ctrl-g ctrl-b (`\cg\cb`).
 `COMPLETE_SSH_HOST_KEYBIND` is the key binding to start the input completion for host name.
 It is defaulted to `\cg\cb` (ctrl-g ctrl-b).
 
+`COMPLETE_SSH_HOST_CONFIG_PATTERN` is the pattern of `ssh_config` file paths.
+It is defaulted to `$HOME/.ssh/{config,conf.d/**/*}`.
+
 ## Bibliography
 
 [ruby]: https://www.ruby-lang.org/
