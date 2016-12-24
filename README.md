@@ -5,7 +5,6 @@
 ## Overview
 
 Fish plugin for completing host name based on `$HOME/.ssh/config`.
-If you use [assh] instead of `ssh`, you can use this plugin.
 
 ## Installation
 
@@ -26,16 +25,16 @@ fisher masa0x80/complete_ssh_host.fish
 
 ## Usage
 
-### Switch branches
+### Complete host name
 
-To switch to the selected branch, type ctrl-g ctrl-b (`\cg\cb`).
+To complete host name to command line, type ctrl-s ctrl-s (`\cs\cs`).
 
 ## Setup
 
 ### `COMPLETE_SSH_HOST_KEYBIND`
 
 `COMPLETE_SSH_HOST_KEYBIND` is the key binding to start the input completion for host name.
-It is defaulted to `\cg\cb` (ctrl-g ctrl-b).
+It is defaulted to `\cs\cs` (ctrl-s ctrl-s).
 
 `COMPLETE_SSH_HOST_CONFIG_PATTERN` is the pattern of `ssh_config` file paths.
 It is defaulted to `$HOME/.ssh/{config,conf.d/**/*}`.
