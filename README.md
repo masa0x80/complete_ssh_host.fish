@@ -20,7 +20,6 @@ fisher masa0x80/complete_ssh_host.fish
 
 ## Dependencies
 
-- [ruby]
 - [fzf], [peco] or [percol]
 
 ## Usage
@@ -36,12 +35,11 @@ To complete host name to command line, type ctrl-s ctrl-s (`\cs\cs`).
 `COMPLETE_SSH_HOST_KEYBIND` is the key binding to start the input completion for host name.
 It is defaulted to `\cs\cs` (ctrl-s ctrl-s).
 
-`COMPLETE_SSH_HOST_CONFIG_PATTERN` is the pattern of `ssh_config` file paths.
-It is defaulted to `$HOME/.ssh/{config,conf.d/**/*}`.
+`COMPLETE_SSH_HOST_CONFIG_PATH` is the pattern of `ssh_config` file paths.
+It is defaulted to `'$HOME/.ssh/config' '$HOME/.ssh/conf.d/*' '$HOME/.ssh/conf.d/**/*'`.
 
 ## Bibliography
 
-[ruby]: https://www.ruby-lang.org/
 [fzf]: https://github.com/junegunn/fzf
 [peco]: https://github.com/peco/peco
 [percol]: https://github.com/mooz/percol

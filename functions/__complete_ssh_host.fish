@@ -1,13 +1,7 @@
 function __complete_ssh_host
-  ruby -e "Dir.glob('$COMPLETE_SSH_HOST_SSH_CONFIG_PATTERN').map do |file|
-    File.read(file).scan(/Host ([^*?\s]+)\n(?:[^#H\s][^\n]*\n)*/i).each do |m|
-      puts m[0]
-    end
-  end" | sort | angler | read -l selected_line
+  command egrep -i '^Host\s+.+' (eval echo $COMPLETE_SSH_HOST_SSH_CONFIG_PATH | string split ' ') ^/dev/null | command egrep -v '[*?]' | awk '{print $2}' | sort | angler | read -l host
 
-  set -l host (echo $selected_line | cut -d ' ' -f 1)
-
-  if test -n "$selected_line"
+  if test -n "$host"
     commandline -a "$host"
   end
   commandline -f repaint
