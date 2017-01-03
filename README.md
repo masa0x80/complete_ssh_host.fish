@@ -35,9 +35,6 @@ To complete host name to command line, type ctrl-s ctrl-s (`\cs\cs`).
 `COMPLETE_SSH_HOST_KEYBIND` is the key binding to start the input completion for host name.
 It is defaulted to `\cs\cs` (ctrl-s ctrl-s).
 
-`COMPLETE_SSH_HOST_CONFIG_DIR_PATH` is the pattern of `ssh_config` file paths.
-It is defaulted to `$HOME/.ssh/conf.d`.
-
 ## Bibliography
 
 [fzf]: https://github.com/junegunn/fzf
