@@ -16,7 +16,7 @@ function __complete_ssh_host
             end
         end
     end
-    command egrep -i '^Host\s+.+' $ssh_config_files | string replace -ri '[^\s]+\s+(.*)' '$1' | string replace -ra '\s' ' ' | string split ' ' | command egrep -v '[*?]' | sort -u | angler | read -l host
+    command egrep -i '^Host\s+.+' $ssh_config_files | string replace -ri '[^\s]+\s+(.*)' '$1' | string replace -ra '\s' ' ' | string split ' ' | command egrep -v '[*?]' | sort -u | angler | tr '\n' ' ' | read -l host
 
     if test -n "$host"
         commandline -a "$host"
