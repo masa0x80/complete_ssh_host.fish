@@ -1,7 +1,7 @@
 function __complete_ssh_host
     set -l ssh_config_files /etc/ssh/ssh_config ~/.ssh/config
     for config_file_path in $ssh_config_files
-        for include_path in (command grep -ri Include $config_file_path | command grep -v '#' | string replace -ri -- '.*:\s*Include\s+(.*)' '$1')
+        for include_path in (command grep -ri Include $config_file_path | command grep -v '#' | string replace -ri -- '.*\s*Include\s+(.*)' '$1')
             if string match -qri -- '^~/' $include_path
                 or string match -qri -- '^\$HOME/' $include_path
                 for file_path in (string split ' ' (eval echo $include_path))
