@@ -33,7 +33,7 @@ To complete host name to command line, type ctrl-s ctrl-s (`\cs\cs`).
 ### `COMPLETE_SSH_HOST_KEYBIND`
 
 `COMPLETE_SSH_HOST_KEYBIND` is the key binding to start the input completion for host name.
-It is defaulted to `\cs\cs` (ctrl-s ctrl-s).
+It is defaulted to `\cgs` (ctrl-g s).
 
 ## Bibliography
 
