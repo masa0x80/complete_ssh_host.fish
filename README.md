@@ -20,7 +20,7 @@ fisher masa0x80/complete_ssh_host.fish
 
 ## Dependencies
 
-- [fzf], [peco] or [percol]
+- [fzf]
 
 ## Usage
 
@@ -38,8 +38,6 @@ It is defaulted to `\cgs` (ctrl-g s).
 ## Bibliography
 
 [fzf]: https://github.com/junegunn/fzf
-[peco]: https://github.com/peco/peco
-[percol]: https://github.com/mooz/percol
 [fresco]: https://github.com/masa0x80/fresco
 [fisherman]: https://github.com/fisherman/fisherman
 [assh]: https://github.com/moul/advanced-ssh-config

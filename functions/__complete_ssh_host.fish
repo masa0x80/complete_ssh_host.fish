@@ -1,4 +1,6 @@
 function __complete_ssh_host
+    type fzf >/dev/null || return 1
+
     set -l ssh_config_files /etc/ssh/ssh_config ~/.ssh/config
     for config_file_path in $ssh_config_files
         for include_path in (command grep -ri Include $config_file_path | command grep -v '#' | string replace -ri -- '.*\s*Include\s+(.*)' '$1')
@@ -16,7 +18,7 @@ function __complete_ssh_host
             end
         end
     end
-    command egrep -i '^Host\s+.+' $ssh_config_files | string replace -ri '[^\s]+\s+(.*)' '$1' | string replace -ra '\s' ' ' | string split ' ' | command egrep -v '[*?]' | sort -u | angler | tr '\n' ' ' | read -l host
+    command egrep -i '^Host\s+.+' $ssh_config_files | string replace -ri '[^\s]+\s+(.*)' '$1' | string replace -ra '\s' ' ' | string split ' ' | command egrep -v '[*?]' | sort -u | fzf | tr '\n' ' ' | read -l host
 
     if test -n "$host"
         commandline -a "$host"
