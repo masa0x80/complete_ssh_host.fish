@@ -40,4 +40,3 @@ It is defaulted to `\cgs` (ctrl-g s).
 [fzf]: https://github.com/junegunn/fzf
 [fresco]: https://github.com/masa0x80/fresco
 [fisherman]: https://github.com/fisherman/fisherman
-[assh]: https://github.com/moul/advanced-ssh-config
