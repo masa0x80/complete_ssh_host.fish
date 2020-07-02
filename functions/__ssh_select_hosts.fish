@@ -1,4 +1,4 @@
-function __ssh_select_host
+function __ssh_select_hosts
     argparse -n __ssh_select_host 'q/query=' -- $argv || return
 
     set -l config_paths /etc/ssh/ssh_config ~/.ssh/config
@@ -21,5 +21,5 @@ function __ssh_select_host
 
     command egrep -i '^Host\s+.+' $config_paths | string replace -ri '[^\s]+\s+(.*)' '$1' | \
         string replace -ra '\s' ' ' | string split ' ' | command egrep -v '[*?]' | sort -u | \
-        fzf +m -q "$_flag_query" | tr '\n' ' '
+        fzf -m -q "$_flag_query" | tr '\n' ' ' | string trim
 end
